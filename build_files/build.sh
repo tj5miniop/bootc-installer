@@ -2,10 +2,10 @@
 
 set -ouex pipefail
 
-### Install packages
-# install core networkmanager
-dnf5 install -y NetworkManager systemd
-systemctl enable Networkmanager
+### Install packages - these should be installed already, but it is always good to check
+# install core networkmanager and firmware. Fzf and dracut is installed as well just in case
+dnf5 install -y NetworkManager systemd linux-firmware bash btrfs-progs dracut fzf
+systemctl enable NetworkManager
 
 
 
